@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Play - Free Open Source HTML Bootstrap Template by UIdeck">
+        <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+        <title> Wande's Website </title>
+    </head>
+
+    <body style="background-color: #3056d3; text-align: center; font-size: large; color: white;" >
+
+
+<h1> Login Below</h1>
+
+<style>
+    h4{
+        color: red;
+    }
+
+</style>
+
+{% for information in messages %}
+<h4> {{information}} </h4> 
+{% endfor %}
+
+    <form method="POST", action="login">
+    {% csrf_token %}
+
+    <p> Username:</p>
+    <input type="text" name="username">
+    <p>Password:</p>
+    <input type="password" name='password'> <br> <br>
+    <input type="submit" name='submit'> <br>
+    <h5>Not registered? Sign up <a href="sign_up" style="color: red;" > here </a> </h5>
+    </form>
+    
+    </body>
